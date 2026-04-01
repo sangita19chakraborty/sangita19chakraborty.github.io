@@ -1,0 +1,170 @@
+.contact {
+  position: relative;
+  padding: 120px 56px 60px;
+  overflow: hidden;
+  background: var(--bg);
+  transition: background 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.contact__inner {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 80px;
+  align-items: start;
+  margin-bottom: 96px;
+  position: relative;
+  z-index: 1;
+}
+
+.contact__left { display: flex; flex-direction: column; gap: 32px; }
+
+.contact__headline {
+  font-size: clamp(48px, 7vw, 96px);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+}
+.contact__headline span:last-child {
+  color: var(--text);
+}
+
+.contact__body {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text-muted);
+  font-weight: 300;
+  max-width: 440px;
+}
+
+.contact__cta { align-self: flex-start; background: var(--accent); color: var(--accent-fg); border: 1px solid var(--accent); }
+.contact__cta:hover { background: var(--text); border-color: var(--text); color: var(--bg); }
+
+/* right column */
+.contact__right {
+  padding-top: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.contact__details { display: flex; flex-direction: column; gap: 0; }
+
+.contact__detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 24px 16px;
+  border-bottom: 1px solid rgba(128,128,128,0.15);
+  border-left: 2px solid transparent;
+  text-decoration: none;
+  cursor: none;
+  transition: transform 0.35s cubic-bezier(0.34,1.4,0.64,1),
+              background 0.3s ease,
+              border-color 0.3s ease,
+              padding 0.3s ease;
+  transform-origin: left center;
+}
+.contact__detail-item:first-child { border-top: 1px solid rgba(128,128,128,0.15); }
+.contact__detail-item:hover {
+  transform: scale(1.025);
+  background: var(--bg-surface);
+  border-left-color: var(--accent);
+  padding-left: 20px;
+}
+.contact__detail-item:hover .contact__detail-value { color: var(--accent); }
+
+.contact__detail-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.contact__detail-value {
+  font-size: 15px;
+  color: var(--text);
+  transition: color 0.3s;
+}
+
+.contact__socials { display: flex; flex-direction: column; gap: 0; }
+
+.contact__social {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-decoration: none;
+  cursor: none;
+  transition: color 0.3s, padding-left 0.3s;
+}
+.contact__social:hover { color: var(--text); padding-left: 12px; }
+
+.contact__social-arrow { font-size: 14px; }
+
+/* footer */
+.contact__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--border);
+  margin-top: auto;
+  padding-top: 32px;
+  position: relative;
+  z-index: 1;
+}
+
+.contact__back-top {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  cursor: none;
+  transition: color 0.2s;
+}
+.contact__back-top:hover { color: var(--accent); }
+
+.contact__copyright {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+/* big name background */
+.contact__big-name {
+  position: absolute;
+  bottom: -0.12em;
+  left: -0.02em;
+  font-size: clamp(100px, 20vw, 260px);
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255,255,255,0.04);
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+  z-index: 0;
+}
+.contact__big-name span { color: rgba(212,255,0,0.06); -webkit-text-stroke: 0; }
+
+@media (max-width: 960px) {
+  .contact { padding: 80px 24px 60px; }
+  .contact__inner { grid-template-columns: 1fr; gap: 48px; }
+  .contact__right { padding-top: 0; }
+}

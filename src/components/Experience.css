@@ -1,0 +1,102 @@
+.exp {
+  position: relative;
+  padding: 120px 56px 48px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  transition: background 0.35s ease;
+}
+
+.exp__header { align-items: flex-start; flex-wrap: wrap; gap: 24px; }
+
+.exp__title-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 32px;
+  flex-direction: column;
+}
+
+.exp__title { text-align: right; }
+
+.exp__cv {
+  font-size: 10px;
+  padding: 10px 20px;
+  white-space: nowrap;
+}
+
+.exp__table { margin-top: 8px; }
+
+.exp__table-head {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 1fr;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 8px;
+}
+
+.exp__table-head span {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.exp__row {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 1fr;
+  align-items: center;
+  padding: 24px 16px;
+  margin: 0 -16px;
+  border-bottom: 1px solid var(--border);
+  cursor: none;
+  transition:
+    opacity 0.3s ease,
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    background 0.3s ease,
+    padding 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: center left;
+}
+.exp__row--dim { opacity: 0.22; transform: scale(0.990); }
+.exp__row--active {
+  background: var(--bg-surface);
+  transform: scale(1.016);
+  padding: 32px 16px;
+}
+.exp__row--active .exp__role { color: var(--accent); }
+.exp__row--active .exp__arrow { letter-spacing: 4px; }
+
+.exp__role {
+  font-size: clamp(15px, 1.8vw, 20px);
+  font-weight: 500;
+  color: var(--text);
+  transition: color 0.3s;
+}
+
+.exp__company {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.exp__period {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.exp__arrow { color: var(--accent); font-size: 10px; }
+
+@media (max-width: 768px) {
+  .exp { padding: 80px 24px; }
+  .exp__table-head, .exp__row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  .exp__table-head { display: none; }
+  .exp__row { padding: 24px 0; }
+  .exp__company, .exp__period { color: var(--text-muted); }
+}

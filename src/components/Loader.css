@@ -1,0 +1,120 @@
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  overflow: hidden;
+  pointer-events: all;
+  background: var(--bg);
+}
+
+/* Full-screen orb canvas */
+.loader__canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+.loader--hold .loader__canvas,
+.loader--out  .loader__canvas { opacity: 0; }
+
+/* Two curtain panels — hidden during loading, appear for split-exit */
+.loader__curtain {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: var(--bg);
+  opacity: 0;
+  transition: transform 1.1s cubic-bezier(0.76, 0, 0.24, 1), opacity 0s 0s;
+  z-index: 3;
+}
+.loader__curtain--top    { top: 0; }
+.loader__curtain--bottom { bottom: 0; }
+
+/* Curtains snap visible the moment hold starts, then split on out */
+.loader--hold .loader__curtain,
+.loader--out  .loader__curtain { opacity: 1; }
+
+.loader--out .loader__curtain--top    { transform: translateY(-100%); }
+.loader--out .loader__curtain--bottom { transform: translateY(100%); }
+
+/* Content layer */
+.loader__content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.loader--hold .loader__content,
+.loader--out  .loader__content { opacity: 0; }
+
+.loader__strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 36px 56px;
+}
+
+.loader__center {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.loader__center-pct {
+  font-family: var(--font-mono);
+  font-size: clamp(32px, 5vw, 64px);
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 40px var(--accent), 0 0 80px var(--accent);
+}
+
+.loader__center-sign {
+  font-size: 0.45em;
+  color: var(--text-muted);
+  margin-left: 4px;
+  vertical-align: super;
+}
+
+.loader__mono {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.loader__counter {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.loader__pct {
+  font-family: var(--font-mono);
+  font-size: clamp(28px, 4vw, 52px);
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.loader__pct-sign {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+@media (max-width: 640px) {
+  .loader__strip { padding: 28px 24px; }
+}

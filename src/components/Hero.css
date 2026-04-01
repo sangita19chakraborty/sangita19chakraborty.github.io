@@ -1,0 +1,184 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 120px 56px 40px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  transition: background 0.35s ease;
+}
+
+/* meta row */
+.hero__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 6px 14px;
+  opacity: 0.85;
+}
+
+.hero__scroll-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* center */
+.hero__center { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 80px 0 60px; }
+
+.hero__role {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.hero__headline {
+  font-size: clamp(48px, 8.5vw, 120px);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 52px;
+}
+
+.hero__line {
+  display: block;
+  overflow: hidden;
+  line-height: 1.0;
+}
+
+.hero__line-inner {
+  display: block;
+  transform: translateY(105%);
+}
+
+.hero__line:last-child .hero__line-inner {
+  color: var(--text);
+}
+
+.hero__ctas { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+
+/* buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 36px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: none;
+  transition: background 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.btn--accent {
+  background: var(--accent);
+  color: var(--accent-fg);
+  border: 1px solid var(--accent);
+}
+.btn--accent:hover { background: var(--text); border-color: var(--text); color: var(--bg); }
+
+.btn--ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+.btn--ghost:hover { border-color: var(--text-muted); }
+
+/* footer */
+.hero__footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.hero__footer-left { display: flex; flex-direction: column; gap: 4px; }
+
+.hero__name-tag {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.hero__location {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.hero__scroll-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero__scroll-line {
+  display: block;
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, #d4ff00, transparent);
+  animation: scrollLine 2s ease-in-out infinite;
+}
+
+@keyframes scrollLine {
+  0%, 100% { opacity: 0.3; transform: scaleY(1); }
+  50% { opacity: 1; transform: scaleY(1.1); }
+}
+
+.hero__scroll-text {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #444;
+  writing-mode: vertical-lr;
+}
+
+/* watermark */
+.hero__watermark {
+  position: absolute;
+  bottom: -0.15em;
+  right: -0.02em;
+  font-size: clamp(120px, 22vw, 280px);
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--outline);
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+  z-index: 0;
+}
+
+@media (max-width: 768px) {
+  .hero { padding: 120px 24px 40px; }
+  .hero__footer { flex-direction: column; align-items: flex-start; gap: 24px; }
+  .hero__scroll-indicator { flex-direction: row; }
+  .hero__scroll-text { writing-mode: horizontal-tb; }
+  .hero__scroll-line { width: 40px; height: 1px; background: linear-gradient(to right, #d4ff00, transparent); }
+}
