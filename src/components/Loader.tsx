@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
+import { useTheme } from '../context/ThemeContext';
+import { themes } from '../constants/theme';
 import './Loader.css';
 
 /* ── Particle type ── */
@@ -68,6 +70,8 @@ function initParticles(w: number, h: number): Particle[] {
 }
 
 export default function Loader({ onDone }: { onDone: () => void }) {
+  const { theme } = useTheme();
+  const accentRef = useRef(themes[theme].accent);
   const [pct, setPct] = useState(0);
   const [phase, setPhase] = useState<'count' | 'hold' | 'out'>('count');
   const raf = useRef<number>(0);
@@ -76,6 +80,11 @@ export default function Loader({ onDone }: { onDone: () => void }) {
   const orbPulse = useRef(0);
   const canvasRaf = useRef<number>(0);
   const pctRef = useRef(0);
+
+  // Keep accent ref in sync with theme
+  useEffect(() => {
+    accentRef.current = themes[theme].accent;
+  }, [theme]);
 
   /* ── Canvas orb + particles ── */
   useEffect(() => {
@@ -91,11 +100,8 @@ export default function Loader({ onDone }: { onDone: () => void }) {
     resize();
     window.addEventListener('resize', resize);
 
-    // Pick accent color from CSS variable
-    const accent = getComputedStyle(document.documentElement)
-      .getPropertyValue('--accent').trim() || '#d4ff00';
-
     const draw = () => {
+      const accent = accentRef.current;
       const w = canvas.width, h = canvas.height;
       const cx = w / 2, cy = h / 2;
       orbPulse.current += 0.018;

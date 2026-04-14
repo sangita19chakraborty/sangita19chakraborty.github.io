@@ -54,7 +54,7 @@ export default function Hero() {
               <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </a>
-          <a href={HERO.secondaryCta.href} className="btn btn--ghost" data-hover>
+          <a href={HERO.secondaryCta.href} className="btn btn--ghost" data-hover target="_blank" rel="noopener noreferrer" download>
             {HERO.secondaryCta.label}
           </a>
         </div>
@@ -63,7 +63,7 @@ export default function Hero() {
       <div className="hero__footer" data-hero-reveal>
         <div className="hero__footer-left">
           <span className="hero__name-tag">{SITE.fullName}</span>
-          <span className="hero__location">Based in London, UK</span>
+          <span className="hero__location">Based in Seoul, South Korea</span>
         </div>
         <div className="hero__scroll-indicator">
           <span className="hero__scroll-line" />

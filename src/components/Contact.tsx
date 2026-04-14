@@ -53,7 +53,7 @@ export default function Contact() {
         <div ref={rightRef} className="contact__right">
           <div className="contact__details">
             {[{label:'Email', href:`mailto:${CONTACT_SECTION.email}`, value: CONTACT_SECTION.email},
-              {label:'Phone', href:`tel:${CONTACT_SECTION.phone}`, value: CONTACT_SECTION.phone}
+              {label:'Contact', href:`https://www.instagram.com/sani.seoulscapes/`, value: CONTACT_SECTION.phone}
             ].map((item, i) => (
               <a
                 key={item.label}

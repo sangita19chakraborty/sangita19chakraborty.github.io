@@ -135,6 +135,8 @@ button { cursor: none; }
 .reveal-line {
   overflow: hidden;
   display: block;
+  padding-bottom: 0.12em;
+  margin-bottom: -0.12em;
 }
 .reveal-line__inner {
   display: block;

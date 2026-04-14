@@ -37,6 +37,8 @@ export default function Experience() {
             style={{ '--delay': 200 } as React.CSSProperties}
             className={`btn btn--ghost exp__cv ${headerRevealed ? 'is-revealed' : ''}`}
             data-hover
+            target="_blank"
+            rel="noopener noreferrer"
             download
           >
             {EXPERIENCE_SECTION.downloadLabel}

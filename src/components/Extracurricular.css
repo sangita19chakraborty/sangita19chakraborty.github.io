@@ -1,0 +1,95 @@
+.extra {
+  position: relative;
+  padding: 120px 56px 80px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  transition: background 0.35s ease;
+}
+
+.extra__header {
+  margin-bottom: 56px;
+}
+
+/* ── Activity Cards ─────────────────────────────────────────────────────── */
+.extra__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  border: 1px solid var(--border);
+  margin-bottom: 0;
+}
+
+.extra__card {
+  background: var(--bg);
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 48px 40px;
+  min-height: 260px;
+  transition:
+    background 0.3s ease,
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.extra__card:hover {
+  background: var(--bg-surface);
+  transform: translateY(-4px);
+}
+
+.extra__card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.extra__icon {
+  font-size: 36px;
+  line-height: 1;
+}
+
+.extra__period {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.extra__org {
+  font-size: clamp(16px, 1.8vw, 22px);
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.extra__role-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  padding: 4px 10px;
+  width: fit-content;
+}
+
+.extra__desc {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--text-muted);
+  flex: 1;
+}
+
+/* ── Divider removed — volunteering is now its own section ── */
+
+@media (max-width: 768px) {
+  .extra {
+    padding: 80px 24px 60px;
+  }
+  .extra__grid {
+    grid-template-columns: 1fr;
+  }
+}

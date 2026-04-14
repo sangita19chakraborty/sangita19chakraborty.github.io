@@ -1,4 +1,4 @@
-import { ABOUT_SECTION } from '../constants/content';
+import { ABOUT_SECTION, ABOUT_STATS } from '../constants/content';
 import { useReveal } from '../hooks/useReveal';
 import CubeBackground from './CubeBackground';
 import './About.css';
@@ -20,13 +20,25 @@ export default function About() {
           <span className="section-tag about__tag">{ABOUT_SECTION.tag}</span>
           <div className="about__profile-box">
             <span className="about__profile-label">{ABOUT_SECTION.profileTag}</span>
-            <div className="about__avatar">
-              <div className="about__avatar-inner">
-                <span>SC</span>
+            <div className="about__avatar-row">
+              <div className="about__avatar">
+                <div className="about__avatar-inner">
+                  <img
+                    src="/images/coffee cup sangita.png"
+                    alt="Sangita Chakraborty"
+                    className="about__avatar-photo"
+                    draggable={false}
+                  />
+                </div>
+              </div>
+              <div className="about__avatar-info">
+                <span className="about__avatar-name">Sangita Chakraborty</span>
+                <span className="about__avatar-role">Strategy &amp; Marketing</span>
+                <span className="about__avatar-location">Seoul, South Korea</span>
               </div>
             </div>
             <div className="about__stats">
-              {[{num:'8+',label:'Years Experience'},{num:'40+',label:'Campaigns Launched'},{num:'15+',label:'Brand Partners'}].map((s,i) => (
+              {ABOUT_STATS.map((s, i) => (
                 <div key={i} className="about__stat">
                   <span className="about__stat-num">{s.num}</span>
                   <span className="about__stat-label">{s.label}</span>

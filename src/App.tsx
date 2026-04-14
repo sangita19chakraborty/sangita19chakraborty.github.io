@@ -9,6 +9,11 @@ import Work from './components/Work';
 import About from './components/About';
 import Experience from './components/Experience';
 import Skills from './components/Skills';
+import Extracurricular from './components/Extracurricular';
+import Volunteering from './components/Volunteering';
+import BrandCollabs from './components/BrandCollabs';
+import Languages from './components/Languages';
+import InstagramInsights from './components/InstagramInsights';
 import Contact from './components/Contact';
 
 function App() {
@@ -34,6 +39,11 @@ function App() {
           <About />
           <Experience />
           <Skills />
+          <Extracurricular />
+          <Volunteering />
+          <BrandCollabs />
+          <Languages />
+          <InstagramInsights />
           <Contact />
         </main>
       </div>

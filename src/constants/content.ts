@@ -6,16 +6,18 @@
 export const SITE = {
   name: "Sangita",
   fullName: "Sangita Chakraborty",
-  role: "Marketing Professional",
-  tagline: "I craft brand stories that move people \nand drive measurable results.",
+  role: "Strategy Consultant & Marketing Specialist",
+  tagline: "Strategic thinker. Marketing-driven.\nI build frameworks that move brands forward.",
   copyright: "© 2026 Sangita Chakraborty. All rights reserved.",
 };
 
 // ── NAVIGATION ───────────────────────────────────────────────────────────────
 export const NAV_LINKS = [
-  { label: "01 Work",     href: "#work" },
-  { label: "02 About",   href: "#about" },
-  { label: "03 Contact", href: "#contact" },
+  { label: "01 Work",       href: "#work" },
+  { label: "02 About",      href: "#about" },
+  { label: "03 Activities", href: "#extracurricular" },
+  { label: "04 Instagram",  href: "#instagram" },
+  { label: "05 Contact",    href: "#contact" },
 ];
 
 // ── HERO ─────────────────────────────────────────────────────────────────────
@@ -28,61 +30,86 @@ export const HERO = {
   },
   secondaryCta: {
     label: "Download CV",
-    href:  "/cv-sangita-sharma.pdf",
+    href:  "/cv-sangita-chakraborty.pdf",
   },
 };
 
 // ── WORK / PROJECTS ──────────────────────────────────────────────────────────
 export const WORK_SECTION = {
   tag:   "Featured Work",
-  title: "Selected Campaigns\n& Projects",
+  title: "Academic Projects\n& Case Studies",
 };
 
 export const PROJECTS = [
   {
     id: 1,
-    client:   "TechNova",
-    title:    "Global Product Launch Campaign",
-    tags:     ["Brand Strategy", "Content Marketing", "Paid Media"],
-    year:     "2025",
-    outcome:  "340% increase in brand awareness across 12 markets",
-    color:    "#1a1a2e",
+    client:     "Ferrari",
+    title:      "Ferrari Brand Strategy Analysis",
+    tags:       ["Brand Strategy", "Luxury Marketing", "Case Study"],
+    year:       "2025",
+    outcome:    "In-depth analysis of Ferrari's global luxury brand positioning and heritage storytelling",
+    color:      "#1a0505",
+    canvaEmbed: "https://www.canva.com/design/DAGonJkaJXQ/T-nG5knAf1jIf-daStOgNw/view?embed",
   },
   {
     id: 2,
-    client:   "GreenLeaf Co.",
-    title:    "Sustainability Rebranding",
-    tags:     ["Brand Identity", "Campaign Strategy", "Social Media"],
-    year:     "2025",
-    outcome:  "2.1M organic impressions in first 30 days",
-    color:    "#0d1f0d",
+    client:     "Tesla",
+    title:      "Tesla Marketing Strategy",
+    tags:       ["EV Marketing", "Brand Disruption", "Digital Strategy"],
+    year:       "2025",
+    outcome:    "Examination of Tesla's disruptive marketing approach and zero-cost acquisition model",
+    color:      "#0a0f1a",
+    canvaEmbed: "https://www.canva.com/design/DAG6FRxRJag/dM7WaZHl17tQdWXH_2xKkg/view?embed",
   },
   {
     id: 3,
-    client:   "Pulse Bank",
-    title:    "Digital Acquisition Strategy",
-    tags:     ["Performance Marketing", "CRO", "Email Marketing"],
-    year:     "2024",
-    outcome:  "58% reduction in customer acquisition cost",
-    color:    "#1c1010",
+    client:     "Starbucks",
+    title:      "Starbucks Global Campaign Analysis",
+    tags:       ["Retail Marketing", "Consumer Behaviour", "Loyalty"],
+    year:       "2025",
+    outcome:    "Analysed Starbucks' loyalty ecosystem and seasonal campaign performance globally",
+    color:      "#031a0a",
+    canvaEmbed: "https://www.canva.com/design/DAG6U5nu2OU/6ebqvt00r0r7b3oong3A2Q/view?embed",
   },
   {
     id: 4,
-    client:   "Aria Wellness",
-    title:    "Influencer & Community Growth",
-    tags:     ["Influencer Marketing", "Community Building", "Content"],
-    year:     "2024",
-    outcome:  "180K new followers, 4.8% avg engagement rate",
-    color:    "#0f0f1f",
+    client:     "Culture Study",
+    title:      "Cultural Profile: Japan",
+    tags:       ["Cross-Cultural Marketing", "Research", "Asia-Pacific"],
+    year:       "2024",
+    outcome:    "Deep-dive cultural analysis informing market-entry strategy for Japan",
+    color:      "#1a0a12",
+    canvaEmbed: "https://www.canva.com/design/DAG5GOoO6dY/xcyfO1TjG1M5VOnwATLanQ/view?embed",
   },
   {
     id: 5,
-    client:   "Orbit SaaS",
-    title:    "B2B Demand Generation",
-    tags:     ["Demand Gen", "ABM", "SEO", "LinkedIn Ads"],
-    year:     "2023",
-    outcome:  "3× pipeline growth in two quarters",
-    color:    "#16100d",
+    client:     "Samsung",
+    title:      "Samsung Marketing Analysis",
+    tags:       ["Consumer Electronics", "Marketing Mix", "Competitive Analysis"],
+    year:       "2024",
+    outcome:    "Comprehensive marketing mix and competitive landscape review for Samsung",
+    color:      "#051020",
+    canvaEmbed: "https://www.canva.com/design/DAG58ng4oDE/4Ct5VOvau0D99fBBOkYSng/view?embed",
+  },
+  {
+    id: 6,
+    client:     "HYBE Corporation",
+    title:      "HYBE — Marketing & Financial Analysis",
+    tags:       ["K-Pop Industry", "Financial Analysis", "Brand Extensions"],
+    year:       "2024",
+    outcome:    "Marketing and financial deep-dive into HYBE's multi-artist IP ecosystem",
+    color:      "#0d0523",
+    canvaEmbed: "https://www.canva.com/design/DAGkH_48jrU/jUiPkZg7i6HTm40ol0PVbA/view?embed",
+  },
+  {
+    id: 7,
+    client:     "Walt Disney",
+    title:      "Strategic Analysis of Walt Disney",
+    tags:       ["Strategic Management", "Media & Entertainment", "M&A"],
+    year:       "2024",
+    outcome:    "Strategic assessment of Disney's business model, diversification and digital pivot",
+    color:      "#100515",
+    canvaEmbed: "https://www.canva.com/design/DAGnlPbyePw/tunwU7o7pX7mM1PN38sEpw/view?embed",
   },
 ];
 
@@ -90,57 +117,201 @@ export const PROJECTS = [
 export const ABOUT_SECTION = {
   tag:        "About",
   profileTag: "{ PROFILE }",
-  headline:   "For over 8 years I've been building bold marketing strategies that connect brands with their audiences.",
+  headline:   "Master's student at Yonsei GSIS, bridging global strategy with creative marketing.",
   bio: [
-    "I specialise in brand strategy, integrated campaign management, and performance marketing — blending creative thinking with data-driven decision-making.",
-    "I believe great marketing is part storytelling, part science. Whether launching a product globally or growing an engaged community, my focus is always on impact that lasts.",
+    "Currently pursuing a Master's in Global Strategy and Management at Yonsei Graduate School of International Studies (GSIS), Seoul. I combine academic rigour with hands-on marketing experience across brand strategy, content creation, and international communications.",
+    "Passionate about the intersection of culture and commerce — from K-Pop's global market impact to luxury brand storytelling. Whether moderating industry panels, writing for an international university newsletter, or creating content for 2,100+ Instagram followers, my focus is always on authentic connections that drive real results.",
   ],
 };
+
+export const ABOUT_STATS = [
+  { num: "8+",   label: "Projects Completed" },
+  { num: "3+",   label: "Club Leadership Roles" },
+  { num: "2.1K", label: "Instagram Followers" },
+];
 
 // ── EXPERIENCE ───────────────────────────────────────────────────────────────
 export const EXPERIENCE_SECTION = {
   tag:          "Experience",
-  title:        "Career History",
+  title:        "Education & Roles",
   downloadLabel: "Download CV",
-  downloadHref:  "/cv-sangita-sharma.pdf",
+  downloadHref:  "/cv-sangita-chakraborty.pdf",
 };
 
 export const EXPERIENCE_ITEMS = [
-  { role: "Senior Marketing Manager",  company: "TechNova",       from: "2023", to: "NOW"  },
-  { role: "Marketing Manager",         company: "GreenLeaf Co.",   from: "2021", to: "2023" },
-  { role: "Brand Strategist",          company: "Pulse Bank",      from: "2019", to: "2021" },
-  { role: "Digital Marketing Lead",    company: "Aria Wellness",   from: "2017", to: "2019" },
-  { role: "Marketing Executive",       company: "Orbit Agency",    from: "2016", to: "2017" },
+  { role: "M.A. Global Strategy & Management",        company: "Yonsei GSIS, Seoul",           from: "2024", to: "NOW"  },
+  { role: "VP & Head of Partnerships",                company: "Global Business Hub Club",     from: "2024", to: "NOW"  },
+  { role: "Editor",                                   company: "University Newsletter Club",  from: "2024", to: "NOW"  },
+  { role: "Social Committee Manager",                 company: "Graduate Student Assoc. (GSA)", from: "2024", to: "NOW"  },
+  { role: "Campus Ambassador",                        company: "KCampus JoongAng Daily",      from: "2024", to: "NOW"  },
 ];
 
 // ── SKILLS ───────────────────────────────────────────────────────────────────
 export const SKILLS_SECTION = {
   tag:   "Skills",
   title: "Core Capabilities",
-  body:  "A versatile skill set built across agencies, startups, and enterprise brands.",
+  body:  "A versatile marketing skill set developed through academic research, club leadership, and real-world content creation.",
 };
 
 export const SKILLS = [
   { number: "01", label: "Brand Strategy" },
-  { number: "02", label: "Campaign Management" },
-  { number: "03", label: "Performance Marketing" },
-  { number: "04", label: "Content & Copywriting" },
-  { number: "05", label: "SEO / SEM" },
-  { number: "06", label: "Data & Analytics" },
+  { number: "02", label: "Content Creation" },
+  { number: "03", label: "Campaign Management" },
+  { number: "04", label: "Cross-Cultural Marketing" },
+  { number: "05", label: "Event Management" },
+  { number: "06", label: "Social Media Marketing" },
+  { number: "07", label: "Marketing Analytics" },
+  { number: "08", label: "Public Relations" },
+];
+
+// ── EXTRACURRICULAR ───────────────────────────────────────────────────────────
+export const EXTRA_SECTION = {
+  tag:   "Activities",
+  title: "Extracurricular\nActivities",
+};
+
+export const EXTRA_ITEMS = [
+  {
+    id:     1,
+    org:    "University Newsletter Club",
+    role:   "Junior Editor → Editor",
+    period: "2024 – NOW",
+    desc:   "Write university articles covering student club activities and Korean issues — creating survival-kit content for international students.",
+    icon:   "✍️",
+  },
+  {
+    id:     2,
+    org:    "KCampus Ambassador",
+    role:   "Campus Ambassador",
+    period: "2024 – NOW",
+    desc:   "Official ambassador for KCampus JoongAng Daily, representing the university and promoting Korea-focused media and education content.",
+    icon:   "🎓",
+  },
+  {
+    id:     3,
+    org:    "Global Business Hub Club",
+    role:   "Head of Partnerships → VP",
+    period: "2024 – NOW",
+    desc:   "Organises panel talk events as moderator, LinkedIn events, networking meetups, company visits, and Korean Resume Workshops for international students.",
+    icon:   "🤝",
+  },
+  {
+    id:     4,
+    org:    "Graduate Student Association (GSA)",
+    role:   "Social Committee Manager",
+    period: "3 Semesters",
+    desc:   "MT Gala & inter-GSIS committee member. Organised esports tournaments, baseball matches, and hiking events for the graduate community.",
+    icon:   "⚡",
+  },
+  {
+    id:     5,
+    org:    "Instagram — @sani.seoulscapes",
+    role:   "Content Creator & Brand Collaborator",
+    period: "2023 – NOW",
+    desc:   "Maintains an Instagram account with barter brand collaborations with beauty & skincare brands, campaign participations, and marketing review content.",
+    icon:   "📱",
+  },
+];
+
+// ── BRAND COLLABORATIONS ──────────────────────────────────────────────────────
+export const BRANDS_SECTION = {
+  tag:  "Collaborations",
+  title: "Brand Partners",
+  body: "Worked with Korea-based beauty, skincare, and wellness brands through barter collaborations, campaigns, and content creation.",
+};
+
+export const BRANDS = [
+  { name: "VT Cosmetics",         abbr: "VT",   color: "#c8ff00" },
+  { name: "Juno Hair",            abbr: "JH",   color: "#ff9cda" },
+  { name: "Lamiche Dermatology",  abbr: "LM",   color: "#a0e4ff" },
+  { name: "Vog Hair",             abbr: "VH",   color: "#ffd6a5" },
+  { name: "BtheB",                abbr: "BtB",  color: "#b9fbc0" },
+  { name: "Face Republic",        abbr: "FR",   color: "#ffadad" },
+  { name: "Dellaborn",            abbr: "DB",   color: "#e0c3fc" },
+  { name: "Vands Clinic",         abbr: "VC",   color: "#caffbf" },
+  { name: "ID Clinic",            abbr: "ID",   color: "#ffd6ff" },
+  { name: "Mary & May",           abbr: "M&M",  color: "#fdffb6" },
+];
+
+// ── VOLUNTEERING ──────────────────────────────────────────────────────────────
+export const VOLUNTEER_SECTION = {
+  tag:   "Giving Back",
+  title: "Volunteering",
+};
+
+export const VOLUNTEER_ITEMS = [
+  {
+    org:    "Hello World Korea",
+    role:   "English Mentor",
+    period: "2024 – NOW",
+    desc:   "Mentoring Korean middle school students in English, fostering language confidence and cross-cultural understanding.",
+    icon:   "🌍",
+  },
+  {
+    org:    "NomadHER — She Can Travel Anywhere Festival",
+    role:   "Guide & Connector",
+    period: "2025",
+    desc:   "Volunteered at the NomadHER festival, guiding attendees, facilitating meaningful connections, and helping people navigate the event space.",
+    icon:   "✈️",
+  },
+  {
+    org:    "KCampus JoongAng Daily",
+    role:   "University Campus Ambassador",
+    period: "2024 – NOW",
+    desc:   "Serving as an official Campus Ambassador for KCampus, a key Korean media and education platform, representing Yonsei University.",
+    icon:   "📰",
+  },
+];
+
+// ── LANGUAGES ─────────────────────────────────────────────────────────────────
+export const LANGUAGES_SECTION = {
+  tag:  "Languages",
+  title: "Multilingual\nCommunicator",
+  body: "Fluent across multiple languages, enabling authentic connections across cultures.",
+};
+
+export const LANGUAGES = [
+  { lang: "English",  level: "Fluent",       proficiency: 100, script: "Hello"    },
+  { lang: "Hindi",    level: "Native",        proficiency: 100, script: "नमस्ते"  },
+  { lang: "Bengali",  level: "Native",        proficiency: 100, script: "নমস্কার" },
+  { lang: "Korean",   level: "Level 3",       proficiency: 75,  script: "안녕하세요" },
+  { lang: "Japanese", level: "Beginner",      proficiency: 20,  script: "こんにちは" },
+];
+
+// ── INSTAGRAM INSIGHTS ────────────────────────────────────────────────────────
+export const INSTAGRAM_SECTION = {
+  tag:    "Social Proof",
+  title:  "Instagram\nInsights",
+  handle: "@sani.seoulscapes",
+  period: "13 Jan — 13 Apr 2026",
+  days:   "90 days",
+  href:   "https://www.instagram.com/sani.seoulscapes/",
+  followers: "2,100+",
+};
+
+export const INSTAGRAM_STATS = [
+  { label: "Reel Views",       value: "1.4L",  sub: "140,000+ views" },
+  { label: "Accounts Reached", value: "94K",   sub: "in 90 days"     },
+  { label: "Likes",            value: "14K",   sub: "total"          },
+  { label: "Saves",            value: "791",   sub: "saved posts"    },
+  { label: "Shares",           value: "672",   sub: "organic"        },
+  { label: "Reposts",          value: "518",   sub: "reposts"        },
+  { label: "Comments",         value: "342",   sub: "conversations"  },
+  { label: "Reels",            value: "43",    sub: "published"      },
 ];
 
 // ── CONTACT ──────────────────────────────────────────────────────────────────
 export const CONTACT_SECTION = {
   tag:      "Contact",
   headline: "Let's work\ntogether.",
-  body:     "Open to new opportunities, collaborations, and interesting conversations. Drop me a line.",
+  body:     "Open to internships, collaborations, and interesting conversations. Based in Seoul — drop me a line.",
   cta:      "Send a Message",
   email:    "sangita19chakraborty@gmail.com",
-  phone:    "+44 7000 000000",
+  phone:    "Instagram DM",
 };
 
 export const SOCIAL_LINKS = [
-  { label: "LinkedIn", href: "https://linkedin.com/in/sangitasharma" },
-  { label: "Twitter",  href: "https://twitter.com/sangitasharma" },
-  { label: "Email",    href: "mailto:hello@sangitasharma.com" },
+  { label: "Instagram", href: "https://www.instagram.com/sani.seoulscapes/" },
+  { label: "LinkedIn",  href: "https://linkedin.com/in/sangitachakraborty" },
+  { label: "Email",     href: "mailto:sangita19chakraborty@gmail.com" },
 ];
