@@ -44,30 +44,30 @@ export const PROJECTS = [
   {
     id: 1,
     client:     "Ferrari",
-    title:      "Ferrari Brand Strategy Analysis",
-    tags:       ["Brand Strategy", "Luxury Marketing", "Case Study"],
+    title:      "Ferrari Accounting and Financial Analysis",
+    tags:       ["Accounting Analysis", "Financial Analysis", "Case Study"],
     year:       "2025",
-    outcome:    "In-depth analysis of Ferrari's global luxury brand positioning and heritage storytelling",
+    outcome:    "10 years ratio analysis across five industry peers with 15+ financial metrics evaluated",
     color:      "#1a0505",
     canvaEmbed: "https://www.canva.com/design/DAGonJkaJXQ/T-nG5knAf1jIf-daStOgNw/view?embed",
   },
   {
     id: 2,
     client:     "Tesla",
-    title:      "Tesla Marketing Strategy",
-    tags:       ["EV Marketing", "Brand Disruption", "Digital Strategy"],
+    title:      "Tesla Forecasting P/L Analysis in German Market",
+    tags:       ["Strategy Map", "SWOT Analysis", "Internal/External Audit", "Implementation Plan"],
     year:       "2025",
-    outcome:    "Examination of Tesla's disruptive marketing approach and zero-cost acquisition model",
+    outcome:    "Comprehensive strategic analysis and forecasting of Tesla's profitability in the German market, including a detailed implementation roadmap using CAGR based modelling",
     color:      "#0a0f1a",
     canvaEmbed: "https://www.canva.com/design/DAG6FRxRJag/dM7WaZHl17tQdWXH_2xKkg/view?embed",
   },
   {
     id: 3,
     client:     "Starbucks",
-    title:      "Starbucks Global Campaign Analysis",
-    tags:       ["Retail Marketing", "Consumer Behaviour", "Loyalty"],
+    title:      "Starbucks Marketing Analysis",
+    tags:       ["Marketing Analysis", "4P Analysis", "Campaign Performance"],
     year:       "2025",
-    outcome:    "Analysed Starbucks' loyalty ecosystem and seasonal campaign performance globally",
+    outcome:    "Analysed Starbucks' market profit expansion strategy in South Korea using new business plan",
     color:      "#031a0a",
     canvaEmbed: "https://www.canva.com/design/DAG6U5nu2OU/6ebqvt00r0r7b3oong3A2Q/view?embed",
   },
@@ -139,18 +139,18 @@ export const EXPERIENCE_SECTION = {
 };
 
 export const EXPERIENCE_ITEMS = [
-  { role: "M.A. Global Strategy & Management",        company: "Yonsei GSIS, Seoul",           from: "2024", to: "NOW"  },
-  { role: "VP & Head of Partnerships",                company: "Global Business Hub Club",     from: "2024", to: "NOW"  },
-  { role: "Editor",                                   company: "University Newsletter Club",  from: "2024", to: "NOW"  },
-  { role: "Social Committee Manager",                 company: "Graduate Student Assoc. (GSA)", from: "2024", to: "NOW"  },
-  { role: "Campus Ambassador",                        company: "KCampus JoongAng Daily",      from: "2024", to: "NOW"  },
+  { role: "M.A. Global Strategy & Management",        company: "Yonsei GSIS, Seoul",            from: "2024", to: "NOW"  },
+  { role: "VP & Head of Partnerships",                company: "Global Business Hub Club",      from: "2025", to: "NOW"  },
+  { role: "Editor",                                   company: "University Newsletter Club",    from: "2025", to: "NOW"  },
+  { role: "Social/Inter-GSIS Committee Manager",      company: "Graduate Student Assoc. (GSA)", from: "2024", to: "NOW"  },
+  { role: "University Campus Ambassador",             company: "KCampus JoongAng Daily",        from: "2026", to: "NOW"  },
 ];
 
 // ── SKILLS ───────────────────────────────────────────────────────────────────
 export const SKILLS_SECTION = {
   tag:   "Skills",
   title: "Core Capabilities",
-  body:  "A versatile marketing skill set developed through academic research, club leadership, and real-world content creation.",
+  body:  "A versatile strategic marketing skill set developed through academic research, club leadership, and real-world content creation.",
 };
 
 export const SKILLS = [
@@ -158,10 +158,10 @@ export const SKILLS = [
   { number: "02", label: "Content Creation" },
   { number: "03", label: "Campaign Management" },
   { number: "04", label: "Cross-Cultural Marketing" },
-  { number: "05", label: "Event Management" },
-  { number: "06", label: "Social Media Marketing" },
-  { number: "07", label: "Marketing Analytics" },
-  { number: "08", label: "Public Relations" },
+  { number: "05", label: "Negotiation Skills" },
+  { number: "06", label: "Social Media & Influencer Marketing" },
+  { number: "07", label: "Marketing Research & Analytics" },
+  { number: "08", label: "Public Relations" }
 ];
 
 // ── EXTRACURRICULAR ───────────────────────────────────────────────────────────
@@ -175,15 +175,15 @@ export const EXTRA_ITEMS = [
     id:     1,
     org:    "University Newsletter Club",
     role:   "Junior Editor → Editor",
-    period: "2024 – NOW",
+    period: "2025 – NOW",
     desc:   "Write university articles covering student club activities and Korean issues — creating survival-kit content for international students.",
     icon:   "✍️",
   },
   {
     id:     2,
-    org:    "KCampus Ambassador",
+    org:    "KCampus University Ambassador",
     role:   "Campus Ambassador",
-    period: "2024 – NOW",
+    period: "2026 – NOW",
     desc:   "Official ambassador for KCampus JoongAng Daily, representing the university and promoting Korea-focused media and education content.",
     icon:   "🎓",
   },
@@ -191,16 +191,16 @@ export const EXTRA_ITEMS = [
     id:     3,
     org:    "Global Business Hub Club",
     role:   "Head of Partnerships → VP",
-    period: "2024 – NOW",
+    period: "2025 – NOW",
     desc:   "Organises panel talk events as moderator, LinkedIn events, networking meetups, company visits, and Korean Resume Workshops for international students.",
     icon:   "🤝",
   },
   {
     id:     4,
     org:    "Graduate Student Association (GSA)",
-    role:   "Social Committee Manager",
+    role:   "Social Manager → MT Gala & Inter-GSIS Committee Manager",
     period: "3 Semesters",
-    desc:   "MT Gala & inter-GSIS committee member. Organised esports tournaments, baseball matches, and hiking events for the graduate community.",
+    desc:   "Social Manager, MT Gala & inter-GSIS committee member. Organised esports tournaments, baseball matches, and hiking events for the graduate community.",
     icon:   "⚡",
   },
   {
@@ -208,7 +208,7 @@ export const EXTRA_ITEMS = [
     org:    "Instagram — @sani.seoulscapes",
     role:   "Content Creator & Brand Collaborator",
     period: "2023 – NOW",
-    desc:   "Maintains an Instagram account with barter brand collaborations with beauty & skincare brands, campaign participations, and marketing review content.",
+    desc:   "Maintains an Instagram account with barter brand collaborations with beauty & skincare brands, campaign participations, marketing review content and lifestyle vlogging",
     icon:   "📱",
   },
 ];
@@ -243,21 +243,21 @@ export const VOLUNTEER_ITEMS = [
   {
     org:    "Hello World Korea",
     role:   "English Mentor",
-    period: "2024 – NOW",
+    period: "2025",
     desc:   "Mentoring Korean middle school students in English, fostering language confidence and cross-cultural understanding.",
     icon:   "🌍",
   },
   {
     org:    "NomadHER — She Can Travel Anywhere Festival",
     role:   "Guide & Connector",
-    period: "2025",
+    period: "2026",
     desc:   "Volunteered at the NomadHER festival, guiding attendees, facilitating meaningful connections, and helping people navigate the event space.",
     icon:   "✈️",
   },
   {
     org:    "KCampus JoongAng Daily",
     role:   "University Campus Ambassador",
-    period: "2024 – NOW",
+    period: "2026 – NOW",
     desc:   "Serving as an official Campus Ambassador for KCampus, a key Korean media and education platform, representing Yonsei University.",
     icon:   "📰",
   },
@@ -304,7 +304,7 @@ export const INSTAGRAM_STATS = [
 export const CONTACT_SECTION = {
   tag:      "Contact",
   headline: "Let's work\ntogether.",
-  body:     "Open to internships, collaborations, and interesting conversations. Based in Seoul — drop me a line.",
+  body:     "Open to internships, full time jobs, collaborations, and interesting conversations. Based in Seoul, open to opportunities in India too — drop me a line.",
   cta:      "Send a Message",
   email:    "sangita19chakraborty@gmail.com",
   phone:    "Instagram DM",
@@ -312,6 +312,6 @@ export const CONTACT_SECTION = {
 
 export const SOCIAL_LINKS = [
   { label: "Instagram", href: "https://www.instagram.com/sani.seoulscapes/" },
-  { label: "LinkedIn",  href: "https://linkedin.com/in/sangitachakraborty" },
+  { label: "LinkedIn",  href: "https://www.linkedin.com/in/sangita-chakraborty-8607a9169/" },
   { label: "Email",     href: "mailto:sangita19chakraborty@gmail.com" },
 ];
