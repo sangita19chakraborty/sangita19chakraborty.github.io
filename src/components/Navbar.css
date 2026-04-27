@@ -75,6 +75,36 @@
   color: var(--accent-fg);
 }
 
+/* PDF download button */
+.nav__pdf-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 10px 18px;
+  border: 1px solid var(--text-muted);
+  color: var(--text-muted);
+  background: none;
+  cursor: none;
+  transition: border-color 0.3s, color 0.3s;
+}
+.nav__pdf-btn:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.nav__pdf-btn:disabled {
+  opacity: 0.6;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.nav__pdf-spin {
+  animation: spin 0.8s linear infinite;
+}
+
 .nav__burger { display: none; }
 
 /* Mobile */
@@ -95,6 +125,7 @@
   }
   .nav__links--open { transform: translateX(0); }
   .nav__link { font-size: 24px; letter-spacing: 0.05em; color: var(--text); }
+  .nav__pdf-btn { font-size: 14px; padding: 12px 28px; }
 
   .nav__burger {
     display: flex;
