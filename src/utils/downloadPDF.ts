@@ -20,7 +20,7 @@ export async function downloadPortfolioPDF() {
     [data-reveal] { opacity: 1 !important; transform: none !important; filter: blur(0) !important; transition: none !important; }
     .reveal-line__inner, .hero__line-inner { transform: translateY(0) !important; transition: none !important; }
     *, *::before, *::after { transition: none !important; animation: none !important; }
-    .nav, .cursor-dot, .cursor-ring { display: none !important; }
+    .nav, .cursor-dot, .cursor-ring, .pto { display: none !important; }
     html { scroll-snap-type: none !important; }
     section { scroll-snap-align: none !important; scroll-snap-stop: unset !important; min-height: auto !important; }
   `;

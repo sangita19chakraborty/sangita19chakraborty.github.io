@@ -73,7 +73,8 @@ export default function Loader({ onDone }: { onDone: () => void }) {
   const { theme } = useTheme();
   const accentRef = useRef(themes[theme].accent);
   const [pct, setPct] = useState(0);
-  const [phase, setPhase] = useState<'count' | 'hold' | 'out'>('count');
+  // intro = doors closing; count = orb counting; hold = doors closed+scan; out = doors opening
+  const [phase, setPhase] = useState<'intro' | 'count' | 'hold' | 'out'>('intro');
   const raf = useRef<number>(0);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const particlesRef = useRef<Particle[]>([]);
@@ -199,6 +200,8 @@ export default function Loader({ onDone }: { onDone: () => void }) {
 
   /* ── Progress counter ── */
   useEffect(() => {
+    if (phase !== 'count') return; // wait for intro doors to finish
+
     const start = performance.now();
     const duration = 2400;
 
@@ -212,23 +215,35 @@ export default function Loader({ onDone }: { onDone: () => void }) {
         setPhase('hold');
         setTimeout(() => {
           setPhase('out');
-          setTimeout(onDone, 1200);
-        }, 500);
+          setTimeout(onDone, 1000);
+        }, 700);
       }
     };
     raf.current = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf.current);
-  }, [onDone]);
+  }, [phase, onDone]);
+
+  /* ── Intro: doors close then reveal orb ── */
+  useEffect(() => {
+    // Wait for doors to slam shut (matches 0.85s CSS transition) then start counting
+    const t = setTimeout(() => setPhase('count'), 950);
+    return () => clearTimeout(t);
+  }, []);
 
   return (
     <div className={`loader loader--${phase}`}>
       {/* Orb + particle canvas — full background */}
       <canvas ref={canvasRef} className="loader__canvas" />
 
-      {/* Top curtain */}
+      {/* Elevator doors — close on intro, open on exit */}
       <div className="loader__curtain loader__curtain--top" />
-      {/* Bottom curtain */}
       <div className="loader__curtain loader__curtain--bottom" />
+
+      {/* Scan line + label shown while doors are closed (hold phase) */}
+      <div className="loader__curtain-center">
+        <span className="loader__scan" />
+        <p className="loader__hold-label">Portfolio</p>
+      </div>
 
       {/* Content layer */}
       <div className="loader__content">

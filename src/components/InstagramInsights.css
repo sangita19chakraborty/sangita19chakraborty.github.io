@@ -101,16 +101,20 @@
   width: 72px;
   height: 72px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #e1306c, #833ab4, #f77737);
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 700;
-  font-size: 18px;
-  color: #fff;
-  letter-spacing: 0.05em;
   position: relative;
   z-index: 1;
+}
+
+.ig__avatar-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
 }
 
 .ig__avatar-ring {

@@ -2,12 +2,14 @@ import { useEffect, useState } from 'react';
 import { SITE, NAV_LINKS } from '../constants/content';
 import ThemeToggle from './ThemeToggle';
 import { downloadPortfolioPDF } from '../utils/downloadPDF';
+import { usePageTransition } from '../context/TransitionContext';
 import './Navbar.css';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [downloading, setDownloading] = useState(false);
+  const { navigate } = usePageTransition();
 
   const handleDownload = async () => {
     setDownloading(true);
@@ -24,15 +26,14 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const handleNavClick = (href: string) => {
+  const handleNavClick = (href: string, label = '') => {
     setMenuOpen(false);
-    const el = document.querySelector(href);
-    el?.scrollIntoView({ behavior: 'smooth' });
+    navigate(href, label);
   };
 
   return (
     <header className={`nav ${scrolled ? 'nav--scrolled' : ''}`}>
-      <a href="#home" className="nav__logo" data-hover onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+      <a href="#home" className="nav__logo" data-hover onClick={(e) => { e.preventDefault(); handleNavClick('#home'); }}>
         {SITE.name}<span>.</span>
       </a>
 
@@ -42,12 +43,12 @@ export default function Navbar() {
             key={link.href}
             className="nav__link"
             data-hover
-            onClick={() => handleNavClick(link.href)}
+            onClick={() => handleNavClick(link.href, link.label)}
           >
             {link.label}
           </button>
         ))}
-        <a href="#contact" className="nav__cta" data-hover onClick={() => handleNavClick('#contact')}>
+        <a href="#contact" className="nav__cta" data-hover onClick={(e) => { e.preventDefault(); handleNavClick('#contact', "Let's Talk"); }}>
           Let's Talk
         </a>
         <button

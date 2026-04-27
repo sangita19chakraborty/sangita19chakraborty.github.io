@@ -8,7 +8,7 @@ export default function Skills() {
   const { ref: gridRef, revealed: gridRevealed } = useReveal<HTMLDivElement>({ threshold: 0.05 });
 
   return (
-    <section className="skills">
+    <section className="skills" id="skills">
       <CubeBackground />
       <div
         ref={headerRef}

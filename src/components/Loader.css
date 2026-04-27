@@ -4,7 +4,15 @@
   z-index: 1000;
   overflow: hidden;
   pointer-events: all;
-  background: var(--bg);
+  /* Same diagonal-stripe texture as the transition doors */
+  background:
+    repeating-linear-gradient(
+      -52deg,
+      #080808 0px,
+      #080808 14px,
+      #0d0d0d 14px,
+      #0d0d0d 28px
+    );
 }
 
 /* Full-screen orb canvas */
@@ -14,32 +22,147 @@
   width: 100%;
   height: 100%;
   z-index: 1;
-  opacity: 1;
+  opacity: 0;
   transition: opacity 0.5s ease;
 }
-.loader--hold .loader__canvas,
-.loader--out  .loader__canvas { opacity: 0; }
+/* Canvas fades in once doors open during count phase */
+.loader--count .loader__canvas,
+.loader--hold  .loader__canvas { opacity: 1; }
+.loader--out   .loader__canvas { opacity: 0; }
 
 /* Two curtain panels — hidden during loading, appear for split-exit */
 .loader__curtain {
   position: absolute;
   left: 0;
   right: 0;
-  height: 50%;
-  background: var(--bg);
+  height: 50.5%;
+  /* Same stripe texture + accent edge — mirrors transition doors */
+  background:
+    repeating-linear-gradient(
+      -52deg,
+      #080808 0px,
+      #080808 14px,
+      #0d0d0d 14px,
+      #0d0d0d 28px
+    );
   opacity: 0;
-  transition: transform 1.1s cubic-bezier(0.76, 0, 0.24, 1), opacity 0s 0s;
+  transition: transform 1.0s cubic-bezier(0.76, 0, 0.24, 1), opacity 0s 0s;
   z-index: 3;
 }
-.loader__curtain--top    { top: 0; }
-.loader__curtain--bottom { bottom: 0; }
+.loader__curtain--top {
+  top: 0;
+  border-bottom: 2px solid var(--accent);
+}
+.loader__curtain--bottom {
+  bottom: 0;
+  border-top: 2px solid var(--accent);
+}
 
-/* Curtains snap visible the moment hold starts, then split on out */
+/* Curtains snap visible the moment hold starts */
 .loader--hold .loader__curtain,
-.loader--out  .loader__curtain { opacity: 1; }
+.loader--out  .loader__curtain {
+  opacity: 1;
+}
 
-.loader--out .loader__curtain--top    { transform: translateY(-100%); }
-.loader--out .loader__curtain--bottom { transform: translateY(100%); }
+/* intro: doors start CLOSED (slammed together from the top) */
+.loader--intro .loader__curtain {
+  opacity: 1;
+  transition: none; /* instant — already closed when component mounts */
+}
+.loader--intro .loader__curtain--top    { transform: translateY(0); }
+.loader--intro .loader__curtain--bottom { transform: translateY(0); }
+
+/* count: doors fly open to reveal the orb */
+.loader--count .loader__curtain--top {
+  opacity: 1;
+  transform: translateY(-101%);
+  transition: transform 0.85s cubic-bezier(0.24, 1, 0.76, 1), opacity 0s;
+}
+.loader--count .loader__curtain--bottom {
+  opacity: 1;
+  transform: translateY(101%);
+  transition: transform 0.85s cubic-bezier(0.24, 1, 0.76, 1), opacity 0s;
+}
+
+/* Glow at seam when hold */
+.loader--hold .loader__curtain--top    { box-shadow: 0  3px 28px rgba(212, 255, 0, 0.55); }
+.loader--hold .loader__curtain--bottom { box-shadow: 0 -3px 28px rgba(212, 255, 0, 0.55); }
+
+/* Doors fly open on exit — same easing as transition overlay */
+.loader--out .loader__curtain--top {
+  transform: translateY(-101%);
+  transition-duration: 0.9s;
+  transition-timing-function: cubic-bezier(0.24, 1, 0.76, 1);
+}
+.loader--out .loader__curtain--bottom {
+  transform: translateY(101%);
+  transition-duration: 0.9s;
+  transition-timing-function: cubic-bezier(0.24, 1, 0.76, 1);
+}
+
+/* ── Scan line + label (shown during hold, same as TransitionOverlay) ── */
+.loader__curtain-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  z-index: 4;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.loader--hold .loader__curtain-center {
+  opacity: 1;
+}
+.loader--out .loader__curtain-center {
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.loader__scan {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 1px;
+  overflow: hidden;
+}
+.loader__scan::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  height: 100%; width: 100%;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    var(--accent) 18%,
+    var(--accent) 82%,
+    transparent 100%
+  );
+  filter: drop-shadow(0 0 8px var(--accent)) drop-shadow(0 0 3px var(--accent));
+  animation: scan-sweep 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@keyframes scan-sweep {
+  from { transform: scaleX(0); opacity: 0; }
+  to   { transform: scaleX(1); opacity: 1; }
+}
+
+.loader__hold-label {
+  font-family: var(--font-mono);
+  font-size: clamp(10px, 1.4vw, 13px);
+  letter-spacing: 0.55em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0;
+  white-space: nowrap;
+  animation: label-in 0.5s 0.12s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@keyframes label-in {
+  from { opacity: 0; letter-spacing: 1em; transform: translateY(10px); }
+  to   { opacity: 1; letter-spacing: 0.55em; transform: translateY(0); }
+}
 
 /* Content layer */
 .loader__content {
@@ -49,8 +172,11 @@
   flex-direction: column;
   z-index: 2;
   pointer-events: none;
-  transition: opacity 0.3s ease;
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
+/* Fade content in with the orb */
+.loader--count .loader__content { opacity: 1; }
 .loader--hold .loader__content,
 .loader--out  .loader__content { opacity: 0; }
 

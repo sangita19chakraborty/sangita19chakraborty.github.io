@@ -111,6 +111,16 @@ export const PROJECTS = [
     color:      "#100515",
     canvaEmbed: "https://www.canva.com/design/DAGnlPbyePw/tunwU7o7pX7mM1PN38sEpw/view?embed",
   },
+  {
+    id: 8,
+    client:    "Haru Bag",
+    title:     "Bussiness Plan - Luxury Handbag Rental Startup",
+    tags:      ["Startup Business Plan", "Luxury Market", "Sustainability"],
+    year:      "2026",
+    outcome:   "Startup business plan for a peer-to-peer rental marketplace and asset-like business model for luxury handbags in the South Korean market",
+    color:     "#050510",
+    canvaEmbed: "https://www.canva.com/design/DAHGbm-rOIM/JCMHPL3iVPO9W3D9UqQJLw/view?embed",
+  }
 ];
 
 // ── ABOUT ─────────────────────────────────────────────────────────────────────
@@ -204,13 +214,21 @@ export const EXTRA_ITEMS = [
     icon:   "⚡",
   },
   {
-    id:     5,
+    id:    5,
+    org:   "TOSS - Foreigner Bridge Crew",
+    role:  "Crew Member",
+    period: "2026 - NOW",
+    desc:  "Developing and executing a strategic marketing plan, including targeted campaigns and user interviews, to expand TOSS bank's reach amongst the international community in South Korea.",
+    icon:  "💳",
+  },
+  {
+    id:     6,
     org:    "Instagram — @sani.seoulscapes",
     role:   "Content Creator & Brand Collaborator",
     period: "2023 – NOW",
     desc:   "Maintains an Instagram account with barter brand collaborations with beauty & skincare brands, campaign participations, marketing review content and lifestyle vlogging",
     icon:   "📱",
-  },
+  }
 ];
 
 // ── BRAND COLLABORATIONS ──────────────────────────────────────────────────────

@@ -1,0 +1,172 @@
+/* ─── Transition Overlay ────────────────────────────────────────────────────── */
+
+/* Container — covers entire viewport, sits above everything */
+.pto {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  pointer-events: all; /* block clicks during transition */
+}
+
+/* ─── Doors ─────────────────────────────────────────────────────────────────── */
+.pto__door {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 50.5%; /* tiny 0.5% overlap so no pixel gap at seam */
+
+  /* Dark diagonal-stripe texture — subtle, like a film projector panel */
+  background:
+    repeating-linear-gradient(
+      -52deg,
+      #080808 0px,
+      #080808 14px,
+      #0d0d0d 14px,
+      #0d0d0d 28px
+    );
+
+  will-change: transform;
+}
+
+.pto__door--top {
+  top: 0;
+  border-bottom: 2px solid var(--accent);
+  transform: translateY(-101%);
+  transition:
+    transform 0.85s cubic-bezier(0.76, 0, 0.24, 1),
+    box-shadow 0.35s ease;
+}
+
+.pto__door--bottom {
+  bottom: 0;
+  border-top: 2px solid var(--accent);
+  transform: translateY(101%);
+  transition:
+    transform 0.85s cubic-bezier(0.76, 0, 0.24, 1),
+    box-shadow 0.35s ease;
+}
+
+/* ── Doors close (in / hold) ── */
+.pto--in  .pto__door--top,
+.pto--hold .pto__door--top  { transform: translateY(0); }
+
+.pto--in  .pto__door--bottom,
+.pto--hold .pto__door--bottom { transform: translateY(0); }
+
+/* ── Accent glow at the seam when fully closed ── */
+.pto--hold .pto__door--top    { box-shadow: 0  3px 28px rgba(212, 255, 0, 0.55); }
+.pto--hold .pto__door--bottom { box-shadow: 0 -3px 28px rgba(212, 255, 0, 0.55); }
+
+/* ── Doors open (out) — decelerate out for a snappy feel ── */
+.pto--out .pto__door--top {
+  transform: translateY(-101%);
+  transition-duration: 0.9s;
+  transition-timing-function: cubic-bezier(0.24, 1, 0.76, 1);
+}
+.pto--out .pto__door--bottom {
+  transform: translateY(101%);
+  transition-duration: 0.9s;
+  transition-timing-function: cubic-bezier(0.24, 1, 0.76, 1);
+}
+
+/* ── Shimmer pass on doors as they close ── */
+.pto__door::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 30%,
+    rgba(212, 255, 0, 0.04) 50%,
+    transparent 70%
+  );
+  background-size: 200% 100%;
+  animation: door-shimmer 0.7s ease forwards;
+  pointer-events: none;
+}
+
+@keyframes door-shimmer {
+  from { background-position: -100% 0; }
+  to   { background-position: 200% 0; }
+}
+
+/* ─── Center stage — scan + label ───────────────────────────────────────────── */
+.pto__center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  z-index: 1;
+  /* hidden until doors are closed */
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+.pto__center--hold {
+  opacity: 1;
+}
+.pto__center--out {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+/* Horizontal scan line sweeps left → right */
+.pto__scan {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 1px;
+  overflow: hidden;
+}
+
+.pto__scan::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    var(--accent) 18%,
+    var(--accent) 82%,
+    transparent 100%
+  );
+  filter: drop-shadow(0 0 8px var(--accent)) drop-shadow(0 0 3px var(--accent));
+  transform-origin: left center;
+  animation: scan-sweep 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes scan-sweep {
+  from { transform: scaleX(0); opacity: 0; }
+  to   { transform: scaleX(1); opacity: 1; }
+}
+
+/* Section label — letters compress into place */
+.pto__label {
+  font-family: var(--font-mono);
+  font-size: clamp(10px, 1.4vw, 13px);
+  letter-spacing: 0.55em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0;
+  white-space: nowrap;
+  animation: label-in 0.5s 0.12s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes label-in {
+  from {
+    opacity: 0;
+    letter-spacing: 1em;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    letter-spacing: 0.55em;
+    transform: translateY(0);
+  }
+}

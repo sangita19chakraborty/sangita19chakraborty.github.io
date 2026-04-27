@@ -1,6 +1,8 @@
 import { useState, useCallback } from 'react';
 import './App.css';
 import { ThemeProvider } from './context/ThemeContext';
+import { PageTransitionProvider } from './context/TransitionContext';
+import TransitionOverlay from './components/TransitionOverlay';
 import Cursor from './components/Cursor';
 import Loader from './components/Loader';
 import Navbar from './components/Navbar';
@@ -16,10 +18,10 @@ import Languages from './components/Languages';
 import InstagramInsights from './components/InstagramInsights';
 import Contact from './components/Contact';
 
-function App() {
+// Inner component — must live inside PageTransitionProvider to use the context
+function PageContent() {
   const [loaded, setLoaded] = useState(false);
 
-  // Prevent browser from restoring scroll position on reload
   if (typeof history !== 'undefined') history.scrollRestoration = 'manual';
 
   const handleLoaded = useCallback(() => {
@@ -28,7 +30,8 @@ function App() {
   }, []);
 
   return (
-    <ThemeProvider>
+    <>
+      <TransitionOverlay />
       <Cursor />
       {!loaded && <Loader onDone={handleLoaded} />}
       <div className={`page ${loaded ? 'page--visible' : ''}`}>
@@ -47,6 +50,16 @@ function App() {
           <Contact />
         </main>
       </div>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <ThemeProvider>
+      <PageTransitionProvider>
+        <PageContent />
+      </PageTransitionProvider>
     </ThemeProvider>
   );
 }

@@ -10,7 +10,7 @@ export default function Experience() {
   const { ref: tableRef, revealed: tableRevealed } = useReveal<HTMLDivElement>({ threshold: 0.08 });
 
   return (
-    <section className="exp">
+    <section className="exp" id="experience">
       <CubeBackground />
       <div
         ref={headerRef}

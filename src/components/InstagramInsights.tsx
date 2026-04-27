@@ -56,7 +56,7 @@ export default function InstagramInsights() {
         <div className="ig__profile-left">
           <div className="ig__avatar-wrap">
             <div className="ig__avatar">
-              <span>SC</span>
+              <img src="/images/coffee cup sangita.png" alt="Sangita Chakraborty" className="ig__avatar-photo" />
             </div>
             <div className="ig__avatar-ring" />
           </div>
