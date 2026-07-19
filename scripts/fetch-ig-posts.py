@@ -4,7 +4,7 @@ from instagrapi import Client
 
 OUT_JSON    = "public/ig-posts.json"
 OUT_IMG_DIR = "public/images/ig-posts"
-COUNT       = 8
+COUNT       = 12
 
 os.makedirs(OUT_IMG_DIR, exist_ok=True)
 

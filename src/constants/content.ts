@@ -367,5 +367,5 @@ export const SOCIAL_LINKS = [
 // ── VISUAL & DESIGN ───────────────────────────────────────────────────────────
 export const VISUAL_DESIGN_SECTION = {
   tag:   "Visual & Design",
-  title: "Visual\n& Design",
+  title: "Visual & Design",
 };

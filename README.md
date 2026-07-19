@@ -70,4 +70,5 @@ export default defineConfig([
     },
   },
 ])
+INSTAGRAM_USERNAME=sani.seoulscapes INSTAGRAM_SESSIONID=your_sessionid_here python3 scripts/fetch-ig-posts.py
 ```
