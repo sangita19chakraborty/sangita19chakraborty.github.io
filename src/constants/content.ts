@@ -120,6 +120,36 @@ export const PROJECTS = [
     outcome:   "Startup business plan for a peer-to-peer rental marketplace and asset-like business model for luxury handbags in the South Korean market",
     color:     "#050510",
     canvaEmbed: "https://www.canva.com/design/DAHGbm-rOIM/JCMHPL3iVPO9W3D9UqQJLw/view?embed",
+  },
+  {
+    id: 9,
+    client: "K-verse",
+    title: "K-verse / k-pop rental marketplace",
+    tags: ["Startup Business Plan", "K-Pop Merchandise", "E-commerce"],
+    year: "2026",
+    outcome: "Business plan for a peer-to-peer rental marketplace for K-Pop merchandise, including market analysis, revenue model, and marketing strategy.",
+    color: "#0a0a1a",
+    canvaEmbed: "https://www.canva.com/design/DAHLlXl3_UQ/wbJ61rN9secrKXP0R9Ay8g/view?embed",
+  },
+  {
+    id: 10,
+    client: "L'Oréal",
+    title: "L'Oréal AI integration in brand marketing",
+    tags: ["AI Integration", "Brand Marketing", "Consumer Goods", "Digital Trade Innovation"],
+    year: "2026",
+    outcome: "Analysis of L'Oréal's AI-driven marketing strategies and their impact on consumer engagement.",
+    color: "#1a1a1a",
+    canvaEmbed: "https://www.canva.com/design/DAHKuKSLIl4/z2XiUsMjclLMAELlbUonOg/view?embed",
+  },
+  {
+    id: 11,
+    client: "Coupang",
+    title: "Coupang Strategic AI framework for e-commerce",
+    tags: ["E-commerce", "HR management", "Consumer Behavior", "AI Framework"],
+    year: "2026",
+    outcome: "A board briefing report on strategic AI framework for Coupang to enhance e-commerce operations and customer experience.",
+    color: "#0a1a1a",
+    canvaEmbed: "https://www.canva.com/design/DAHIHTieKrE/7RhXT5Or6L5_vyV_nSqekQ/view?embed",
   }
 ];
 
