@@ -9,7 +9,7 @@ COUNT       = 8
 os.makedirs(OUT_IMG_DIR, exist_ok=True)
 
 cl = Client()
-cl.login(os.environ["INSTAGRAM_USERNAME"], os.environ["INSTAGRAM_PASSWORD"])
+cl.login_by_sessionid(os.environ["INSTAGRAM_SESSIONID"])
 
 uid    = cl.user_id_from_username(os.environ["INSTAGRAM_USERNAME"])
 medias = cl.user_medias(uid, COUNT)
