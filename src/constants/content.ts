@@ -331,21 +331,21 @@ export const INSTAGRAM_SECTION = {
   tag:    "Social Proof",
   title:  "Instagram\nInsights",
   handle: "@sani.seoulscapes",
-  period: "13 Jan — 13 Apr 2026",
+  period: "19 Apr — 19 Jul 2026",
   days:   "90 days",
   href:   "https://www.instagram.com/sani.seoulscapes/",
-  followers: "2,100+",
+  followers: "2,300+",
 };
 
 export const INSTAGRAM_STATS = [
-  { label: "Reel Views",       value: "1.4L",  sub: "140,000+ views" },
-  { label: "Accounts Reached", value: "94K",   sub: "in 90 days"     },
-  { label: "Likes",            value: "14K",   sub: "total"          },
-  { label: "Saves",            value: "791",   sub: "saved posts"    },
-  { label: "Shares",           value: "672",   sub: "organic"        },
-  { label: "Reposts",          value: "518",   sub: "reposts"        },
-  { label: "Comments",         value: "342",   sub: "conversations"  },
-  { label: "Reels",            value: "43",    sub: "published"      },
+  { label: "Reel Views",       value: "2.5L",  sub: "250,000+ views" },
+  { label: "Accounts Reached", value: "1.2L",   sub: "in 90 days"     },
+  { label: "Likes",            value: "26K",   sub: "total"          },
+  { label: "Saves",            value: "1.6K",   sub: "saved posts"    },
+  { label: "Shares",           value: "1.5K",   sub: "organic"        },
+  { label: "Reposts",          value: "682",   sub: "reposts"        },
+  { label: "Comments",         value: "496",   sub: "conversations"  },
+  { label: "Reels",            value: "44",    sub: "published"      },
 ];
 
 // ── CONTACT ──────────────────────────────────────────────────────────────────
