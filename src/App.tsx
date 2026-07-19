@@ -16,6 +16,7 @@ import Volunteering from './components/Volunteering';
 import BrandCollabs from './components/BrandCollabs';
 import Languages from './components/Languages';
 import InstagramInsights from './components/InstagramInsights';
+import VisualDesign from './components/VisualDesign';
 import Contact from './components/Contact';
 
 // Inner component — must live inside PageTransitionProvider to use the context
@@ -42,6 +43,7 @@ function PageContent() {
           <About />
           <Experience />
           <Skills />
+          {import.meta.env.VITE_SHOW_VISUAL_DESIGN !== 'false' && <VisualDesign />}
           <Extracurricular />
           <Volunteering />
           <BrandCollabs />

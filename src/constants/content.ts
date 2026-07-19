@@ -363,3 +363,9 @@ export const SOCIAL_LINKS = [
   { label: "LinkedIn",  href: "https://www.linkedin.com/in/sangita-chakraborty-8607a9169/" },
   { label: "Email",     href: "mailto:sangita19chakraborty@gmail.com" },
 ];
+
+// ── VISUAL & DESIGN ───────────────────────────────────────────────────────────
+export const VISUAL_DESIGN_SECTION = {
+  tag:   "Visual & Design",
+  title: "Visual\n& Design",
+};
