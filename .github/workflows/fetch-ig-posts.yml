@@ -21,13 +21,13 @@ jobs:
       - name: Install instagrapi
         run: python3 -m pip install instagrapi
 
-      - name: Fetch posts        if: ${{ secrets.INSTAGRAM_ENABLED == 'true' }}        run: python scripts/fetch-ig-posts.py
+      - name: Fetch posts
+        run: python3 scripts/fetch-ig-posts.py
         env:
           INSTAGRAM_USERNAME: ${{ secrets.INSTAGRAM_USERNAME }}
           INSTAGRAM_PASSWORD: ${{ secrets.INSTAGRAM_PASSWORD }}
 
       - name: Commit updated posts
-        if: ${{ secrets.INSTAGRAM_ENABLED == 'true' }}
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
