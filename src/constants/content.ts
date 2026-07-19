@@ -167,7 +167,7 @@ export const ABOUT_SECTION = {
 export const ABOUT_STATS = [
   { num: "8+",   label: "Projects Completed" },
   { num: "3+",   label: "Club Leadership Roles" },
-  { num: "2.1K", label: "Instagram Followers" },
+  { num: "2.4K", label: "Instagram Followers" },
 ];
 
 // ── EXPERIENCE ───────────────────────────────────────────────────────────────
